@@ -1,16 +1,29 @@
-import React from 'react'
+import './Home.css';
+
 
 function Home() {
     return (
-        <div className="flex">
-            <div>scarlet witch</div>
-            <div>mais poderosa que o mago supremo</div>
+        <>
+            <div className="bg-indigo-900 flex justify-center">
+                <div className='container grid grid-cols-2 text-white'>
+                    <div className="flex flex-col gap-4 items-center justify-center py-4">
+                        <h2 className='text-5xl font-bold'>Seja bem vinde!</h2>
+                        <p className='text-xl'>Expresse aqui seus pensamentos e opniões</p>
 
-            <div>
-                <img src="data:image/jpeg;base64,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" alt="scarlet witch" />
+                        <div className="flex justify-around gap-4">
+
+                            <button className='rounded bg-white text-blue-800 py-2 px-4'>Ver postagens</button>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center ">
+
+                    </div>
+                </div>
             </div>
-        </div>
-    )
+
+        </>
+    );
 }
 
-export default Home
+export default Home;
