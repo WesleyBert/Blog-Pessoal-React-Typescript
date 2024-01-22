@@ -6,6 +6,7 @@ import { useContext } from 'react';
 function Home() {
     const { nome, setNome } = useContext(UserContext);
 
+    console.log(nome)
     return (
         <div className='flex justify-center items-center'>
             <div>
