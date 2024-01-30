@@ -7,10 +7,11 @@ import Home from "./pages/Home";
 import Login from "./pages/Login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
 import FormularioPostagem from "./components/postagens/formularioPostagens/FormularioPostagens";
 import DeletarPostagem from "./components/postagens/deletarPostagens/DeletarPostagem";
 import ListaPostagens from "./components/ListaPostagens/listaPostagens/ListaPostagens";
+import Footer from "./components/Footer/Footer";
+import Perfil from "./pages/perfil/Perfil";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
               <Route path="/cadastroPostagens" element={<FormularioPostagem />} />
               <Route path="/editarPostagem/:id" element={<FormularioPostagem />} />
               <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+              <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>
           <Footer />
