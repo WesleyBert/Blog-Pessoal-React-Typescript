@@ -8,6 +8,8 @@ import Login from "./pages/Login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import FormularioPostagem from "./components/postagens/formularioPostagens/FormularioPostagens";
+import DeletarPostagem from "./components/postagens/deletarPostagens/DeletarPostagem";
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
               <Route path="/cadastroTema" element={<FormularioTema />} />
               <Route path="/editarTema/:id" element={<FormularioTema />} />
               <Route path="/deletarTema/:id" element={<DeletarTemas />} />
+              <Route path="/cadastroPostagens" element={<FormularioPostagem />} />
+              <Route path="/editarPostagens" element={<FormularioPostagem />} />
+              <Route path="/deletarPostagens" element={<DeletarPostagem />} />
             </Routes>
           </div>
           <Footer />
