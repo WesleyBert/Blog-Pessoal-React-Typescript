@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
+import { atualizar, buscar, cadastrar } from '../../../services/Service';
 
 
 function FormularioPostagem() {
@@ -10,7 +11,7 @@ function FormularioPostagem() {
 
     const { id } = useParams<{ id: string }>();
 
-    const { usuario, handleLogout } = useContext(AuthContext)FormularioPostagem
+    const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
     const [temas, setTemas] = useState<Tema[]>([]);

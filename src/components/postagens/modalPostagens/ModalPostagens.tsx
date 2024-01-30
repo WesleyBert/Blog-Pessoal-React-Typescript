@@ -1,10 +1,8 @@
-import React from 'react';
 import FormularioPostagem from '../formularioPostagens/FormularioPostagens'
 
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
-
-import './ModalPostagem.css'
+import './ModalPostagens.css';
 
 function ModalPostagem() {
     return (
