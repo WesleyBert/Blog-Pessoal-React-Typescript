@@ -3,6 +3,7 @@ import Postagem from "../../../models/Postagem"
 import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
 import { buscar, deletar } from "../../../services/Service"
+import { toastAlerta } from "../../../util/toastAlerta"
 
 
 function DeletarPostagem() {
@@ -12,7 +13,7 @@ function DeletarPostagem() {
     let navigate = useNavigate()
 
     const { id } = useParams<{ id: string }>()
-    
+
     const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token
 
@@ -25,17 +26,17 @@ function DeletarPostagem() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou, favor logar novamente')
+                toastAlerta('O token expirou, favor logar novamente', 'info')
                 handleLogout()
             }
         }
     }
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar Logado')
+            toastAlerta('Você precisa estar Logado', 'info')
             navigate('/login')
         }
-    },[token])
+    }, [token])
 
     useEffect(() => {
         if (id !== undefined) {
@@ -54,9 +55,9 @@ function DeletarPostagem() {
                     'authorization': token
                 }
             })
-            alert('Postagem apaga com sucesso')
+            toastAlerta('Postagem apaga com sucesso', 'sucesso')
         } catch (error) {
-            alert('Error ao apagar a Postagem')
+            toastAlerta('Error ao apagar a Postagem', 'erro')
         }
         retornar()
     }
@@ -69,12 +70,12 @@ function DeletarPostagem() {
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
                 <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Postagem</header>
                 <div className="p-4">
-                    <p className='text-xl h-full'>{ postagem.titulo}</p>
-                    <p>{ postagem.texto}</p>
+                    <p className='text-xl h-full'>{postagem.titulo}</p>
+                    <p>{postagem.texto}</p>
                 </div>
                 <div className="flex">
                     <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
-                    <button className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center' onClick={ deletarPostagem} >
+                    <button className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center' onClick={deletarPostagem} >
                         Sim
                     </button>
                 </div>
