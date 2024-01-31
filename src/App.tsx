@@ -4,7 +4,6 @@ import DeletarTemas from "./components/temas/deletarTemas/DeletarTemas";
 import ListaTemas from "./components/temas/listaTemas/ListaTemas";
 import { AuthProvider } from "./contexts/AuthContext";
 import Home from "./pages/Home";
-import Login from "./pages/Login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Navbar from "./components/Navbar/Navbar";
 import FormularioPostagem from "./components/postagens/formularioPostagens/FormularioPostagens";
@@ -12,6 +11,8 @@ import DeletarPostagem from "./components/postagens/deletarPostagens/DeletarPost
 import ListaPostagens from "./components/ListaPostagens/listaPostagens/ListaPostagens";
 import Footer from "./components/Footer/Footer";
 import Perfil from "./pages/perfil/Perfil";
+import Login from "./pages/login/Login";
+
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
